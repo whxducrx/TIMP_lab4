@@ -41,7 +41,6 @@ function Detail(){
         if(!window.confirm('Вы уверены, что хотите удалить этот инцидент?')){
             return;
         }
-        }
         try{
             setDeleting(true);
             setError('');
@@ -182,6 +181,6 @@ function Detail(){
             </div>
         </div>
     );
-
+}
 
 export default Detail;
