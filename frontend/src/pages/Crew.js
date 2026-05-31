@@ -46,6 +46,7 @@ function Crew() {
         loadInitialData();
     }, []);
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => {
         if (selectedVessel) {
             loadCrew();

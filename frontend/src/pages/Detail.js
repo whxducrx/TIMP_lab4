@@ -12,10 +12,6 @@ function Detail(){
     const [error, setError] = useState('');
     const [deleting, setDeleting] = useState(false);
 
-    useEffect(() => {
-        getIncident();
-    }, [id]);
-
     const getIncident = async () => {
         try{
             setLoading(true);
@@ -39,7 +35,11 @@ function Detail(){
 
     const handleDelete = async () => {
         if(!window.confirm('Вы уверены, что хотите удалить этот инцидент?')){
-            return;
+      
+
+    useEffect(() => {
+        getIncident();
+    }, [id]);      return;
         }
         try{
             setDeleting(true);

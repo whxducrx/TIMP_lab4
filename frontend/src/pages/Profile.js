@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getProfile, updateProfile, changePassword, logout, getCurrentUser } from '../services/api';
+import { getProfile, updateProfile, changePassword, logout } from '../services/api';
 import Spinner from '../components/Spinner';
 import ErrorAlert from '../components/ErrorAlert';
 

@@ -11,7 +11,7 @@ function Home(){
     const navigate = useNavigate();
 
     const [page, setPage] = useState(1);
-    const [limit, setLimit] = useState(10);
+    const [limit] = useState(10);
     const [total, setTotal] = useState(0);
     const [pages, setPages] = useState(1);
 
@@ -19,6 +19,7 @@ function Home(){
     const [criticalityFilter, setCriticalityFilter] = useState('');
     const [shipFilter, setShipFilter] = useState('');
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => {
         getIncidents();
     }, [page, limit, statusFilter, criticalityFilter, shipFilter]);

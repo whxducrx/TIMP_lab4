@@ -22,6 +22,7 @@ function Users() {
         }
     }, [navigate]);
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => {
         loadUsers();
     }, [currentPage, roleFilter]);

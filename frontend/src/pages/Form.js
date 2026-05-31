@@ -3,7 +3,6 @@ import {useNavigate, useSearchParams} from 'react-router-dom';
 import {addIncident, putIncident, getIncidentById, getAllVessels} from '../services/api';
 import Spinner from '../components/Spinner';
 import ErrorAlert from '../components/ErrorAlert';
-import MapWithSearch from '../components/MapWithSearch';
 
 function Form(){
     const [searchParams] = useSearchParams();
@@ -24,6 +23,7 @@ function Form(){
     const [error, setError] = useState('');
     const [validation, setValidation] = useState({});
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => {
         loadVessels();
         if(editId){
@@ -97,6 +97,7 @@ function Form(){
         return 'Низкая';
     };
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => {
         const newCriticality = calculateCriticality(formData);
         if(newCriticality !== formData.criticality){
