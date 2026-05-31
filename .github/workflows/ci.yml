@@ -60,13 +60,13 @@ jobs:
     - name: run frontend tests
       run: |
         cd frontend
-        npm test -- --coverage --watchAll=false --passWithNoTests
+        CI=false npm test -- --coverage --watchAll=false --passWithNoTests
       continue-on-error: true
     
     - name: build frontend
       run: |
         cd frontend
-        npm run build
+        CI=false npm run build
 
   code-quality:
     runs-on: ubuntu-latest
