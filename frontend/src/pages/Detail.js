@@ -33,13 +33,14 @@ function Detail(){
         }
     };
 
-    const handleDelete = async () => {
-        if(!window.confirm('Вы уверены, что хотите удалить этот инцидент?')){
-      
-
     useEffect(() => {
         getIncident();
-    }, [id]);      return;
+    }, [id]);
+
+    const handleDelete = async () => {
+        if(!window.confirm('Вы уверены, что хотите удалить этот инцидент?')){
+            return;
+        }
         }
         try{
             setDeleting(true);
@@ -181,6 +182,6 @@ function Detail(){
             </div>
         </div>
     );
-}
+
 
 export default Detail;
