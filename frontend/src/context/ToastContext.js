@@ -5,6 +5,11 @@ const ToastContext = createContext();
 export function ToastProvider({ children }) {
     const [toasts, setToasts] = useState([]);
 
+    const removeToast = useCallback((id) => {
+        setToasts(prev => prev.filter(toast => toast.id !== id));
+    }, []);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const showToast = useCallback((message, type = 'info', duration = 5000) => {
         const id = Date.now();
         const newToast = { id, message, type, duration };
@@ -18,11 +23,7 @@ export function ToastProvider({ children }) {
         }
 
         return id;
-    }, []);
-
-    const removeToast = useCallback((id) => {
-        setToasts(prev => prev.filter(toast => toast.id !== id));
-    }, []);
+    }, [removeToast]);
 
     const success = useCallback((message, duration = 5000) => {
         showToast(message, 'success', duration);
